@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EV Charging Station Finder</title>
+    <link rel="stylesheet" type="text/css" href="evstyles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Find EV Charging Stations</h1>
+        <form id="location-form">
+            <label for="country">Country:</label>
+            <select id="country" required>
+                <option value="">Select Country</option>
+                <option value="country1">Country 1</option>
+                <option value="country2">Country 2</option>
+                <!-- Add more countries here -->
+            </select>
+            
+            <label for="city">City:</label>
+            <select id="city" required>
+                <option value="">Select City</option>
+                <!-- City options will be populated based on the selected country -->
+            </select>
+            
+            <label for="area">Area:</label>
+            <select id="area" required>
+                <option value="">Select Area</option>
+                <!-- Area options will be populated based on the selected city -->
+            </select>
+            
+            <div class="buttons">
+                <button type="button" id="submit-button">Submit</button>
+                <button type="button" id="track-button">Track</button>
+                <button type="button" id="cancel-button">Cancel</button>
+            </div>
+        </form>
+        
+        <div id="charging-stations">
+            <!-- Charging station details will be displayed here -->
+        </div>
+    </div>
+    
+    <script src="evscript.js"></script>
+</body>
+</html>

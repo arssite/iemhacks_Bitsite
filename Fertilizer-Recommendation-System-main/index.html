@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fertilizer Recommendation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 20px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        p.result {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f7f7f7;
+            border-radius: 6px;
+            text-align: center;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fertilizer Recommendation System</h1>
+
+        <form method="post" action="/predict">
+            <label for="Nitrogen">Nitrogen</label>
+            <input type="text" id="Nitrogen" name="Nitrogen">
+
+            <label for="Potassium">Potassium</label>
+            <input type="text" id="Potassium" name="Potassium">
+
+            <label for="Phosphorous">Phosphorous</label>
+            <input type="text" id="Phosphorous" name="Phosphorous">
+
+            <input type="submit" value="Predict">
+
+            {% if result %}
+            <p class="result">{{ result }}</p>
+            {% endif %}
+        </form>
+    </div>
+
+</body>
+</html>
